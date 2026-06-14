@@ -1,0 +1,164 @@
+{
+  "use_case_scenarios": [
+    {
+      "scenario_id": 1,
+      "name": "电商平台日常需求处理",
+      "description": "电商平台产品经理使用系统处理日常需求",
+      "steps": [
+        {
+          "step": 1,
+          "action": "输入需求",
+          "input": "我们需要开发一个优惠券系统，支持创建、编辑、使用和统计，优惠券需要支持按商品分类、用户等级、时间等条件限制",
+          "expected_output": "系统接受需求，显示正在分析"
+        },
+        {
+          "step": 2,
+          "action": "查看生成的用户故事",
+          "output": [
+            "作为市场人员，我想创建和管理优惠券活动，以便进行促销",
+            "作为购物用户，我想查看可用的优惠券并使用它们，以便获得折扣",
+            "作为系统管理员，我想查看优惠券使用统计，以便评估活动效果"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "选择一个故事并拆解任务",
+          "selected_story": "作为市场人员，我想创建和管理优惠券活动，以便进行促销",
+          "decomposed_tasks": [
+            "设计优惠券表结构",
+            "实现优惠券创建/编辑接口",
+            "实现优惠券查询和搜索",
+            "设计优惠券管理后台"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "生成代码框架",
+          "result": "获得后端 FastAPI 框架代码和前端 Vue 组件代码",
+          "time_saved": "省去 2-3 小时的需求分析和初始设计时间"
+        }
+      ]
+    },
+    {
+      "scenario_id": 2,
+      "name": "新入职工程师快速上手",
+      "description": "新工程师利用系统理解项目需求和架构",
+      "steps": [
+        {
+          "step": 1,
+          "action": "上传现有代码",
+          "files": ["payment.py", "order.py", "user.py"]
+        },
+        {
+          "step": 2,
+          "action": "提取需求和用户故事",
+          "result": "自动生成代码对应的需求文档和用户故事"
+        },
+        {
+          "step": 3,
+          "action": "查看知识库",
+          "benefit": "理解系统已实现的功能和模块"
+        },
+        {
+          "step": 4,
+          "action": "研究任务拆解",
+          "benefit": "理解各个模块之间的依赖关系和集成方式"
+        }
+      ]
+    },
+    {
+      "scenario_id": 3,
+      "name": "技术方案评审",
+      "description": "团队使用系统进行技术方案评审",
+      "steps": [
+        {
+          "step": 1,
+          "action": "输入需求描述"
+        },
+        {
+          "step": 2,
+          "action": "生成标准化用户故事和任务",
+          "benefit": "大家有统一的理解基础"
+        },
+        {
+          "step": 3,
+          "action": "基于生成的代码框架讨论",
+          "benefit": "避免过度设计，快速达成共识"
+        },
+        {
+          "step": 4,
+          "action": "生成评审记录",
+          "result": "保存评审结果和决策"
+        }
+      ]
+    }
+  ],
+  "typical_workflows": [
+    {
+      "workflow_id": "W001",
+      "name": "完整的需求到开发流程",
+      "stages": [
+        {
+          "stage": "需求分析",
+          "actions": ["输入需求", "生成故事", "生成任务"]
+        },
+        {
+          "stage": "设计审批",
+          "actions": ["验证故事准确性", "评审任务划分", "确认优先级"]
+        },
+        {
+          "stage": "开发执行",
+          "actions": ["基于生成代码开发", "按任务分配", "跟踪进度"]
+        },
+        {
+          "stage": "测试验收",
+          "actions": ["按验收标准测试", "验证需求完成度"]
+        }
+      ]
+    },
+    {
+      "workflow_id": "W002",
+      "name": "快速迭代开发流程",
+      "stages": [
+        {
+          "stage": "快速需求输入",
+          "duration": "5 分钟"
+        },
+        {
+          "stage": "自动生成故事和任务",
+          "duration": "2 分钟"
+        },
+        {
+          "stage": "快速代码生成",
+          "duration": "3 分钟"
+        },
+        {
+          "stage": "开发团队开始编码",
+          "duration": "当日"
+        }
+      ],
+      "benefit": "从需求到开发只需 10 分钟"
+    }
+  ],
+  "performance_metrics": {
+    "average_story_generation_time": "1.5-2.5 秒",
+    "average_task_decomposition_time": "1-2 秒",
+    "average_code_generation_time": "2-3 秒",
+    "typical_tokens_usage": {
+      "story_generation": "800-1200 tokens",
+      "task_decomposition": "600-1000 tokens",
+      "code_generation": "1500-3000 tokens"
+    },
+    "user_story_accuracy": "85-95%",
+    "code_executability": "70-80%",
+    "user_satisfaction": "4.2/5.0"
+  },
+  "best_practices": [
+    "提供清晰、具体的需求描述",
+    "包含业务背景信息",
+    "指定技术栈偏好",
+    "定期更新知识库",
+    "保留生成内容进行人工审查",
+    "基于反馈不断优化"
+  ]
+}

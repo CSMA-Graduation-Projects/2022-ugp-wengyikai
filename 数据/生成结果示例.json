@@ -1,0 +1,120 @@
+{
+  "sample_results": [
+    {
+      "result_id": 1,
+      "requirement": "我需要一个用户登录功能",
+      "generated_user_stories": [
+        {
+          "id": 1,
+          "story": "作为新用户，我想快速创建账号并设置密码，以便开始使用系统",
+          "acceptance_criteria": [
+            "注册表单包含邮箱、用户名、密码字段",
+            "密码需要至少 8 个字符，包含大小写字母和数字",
+            "注册成功后收到确认邮件"
+          ]
+        },
+        {
+          "id": 2,
+          "story": "作为已注册用户，我想通过用户名和密码登录，以便访问系统",
+          "acceptance_criteria": [
+            "登录页面支持用户名或邮箱登录",
+            "错误次数超过 5 次时账号锁定 30 分钟",
+            "登录成功后跳转到首页，显示用户信息"
+          ]
+        },
+        {
+          "id": 3,
+          "story": "作为用户，我想快速重置忘记的密码，以便恢复账号访问权限",
+          "acceptance_criteria": [
+            "忘记密码链接发送到注册邮箱",
+            "重置链接 24 小时内有效",
+            "密码重置后自动登出其他设备"
+          ]
+        }
+      ],
+      "decomposed_tasks": [
+        {
+          "task_id": 1,
+          "description": "设计用户表结构，包括用户名、邮箱、密码哈希、创建时间等字段",
+          "category": "backend",
+          "priority": "high",
+          "estimated_effort": "1 day"
+        },
+        {
+          "task_id": 2,
+          "description": "实现注册接口，包括验证、密码加密、邮件发送",
+          "category": "backend",
+          "priority": "high",
+          "estimated_effort": "2 days"
+        },
+        {
+          "task_id": 3,
+          "description": "实现登录接口，包括认证、Session 管理、错误处理",
+          "category": "backend",
+          "priority": "high",
+          "estimated_effort": "2 days"
+        },
+        {
+          "task_id": 4,
+          "description": "实现密码重置流程，包括邮件发送和链接验证",
+          "category": "backend",
+          "priority": "medium",
+          "estimated_effort": "2 days"
+        },
+        {
+          "task_id": 5,
+          "description": "设计注册和登录页面 UI",
+          "category": "frontend",
+          "priority": "high",
+          "estimated_effort": "1.5 days"
+        },
+        {
+          "task_id": 6,
+          "description": "实现登录表单提交和错误提示",
+          "category": "frontend",
+          "priority": "high",
+          "estimated_effort": "2 days"
+        }
+      ],
+      "generated_code_samples": {
+        "backend": {
+          "language": "python",
+          "framework": "FastAPI",
+          "code": "from fastapi import APIRouter, HTTPException\nfrom pydantic import BaseModel, EmailStr\nfrom passlib.context import CryptContext\nfrom sqlalchemy import Column, String, DateTime\nfrom datetime import datetime\nimport secrets\n\nrouter = APIRouter(prefix=\"/auth\", tags=[\"authentication\"])\npwd_context = CryptContext(schemes=[\"bcrypt\"])\n\nclass User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True)\n    username = Column(String, unique=True, index=True)\n    email = Column(String, unique=True, index=True)\n    hashed_password = Column(String)\n    created_at = Column(DateTime, default=datetime.utcnow)\n    is_active = Column(Boolean, default=True)\n\nclass RegisterRequest(BaseModel):\n    username: str\n    email: EmailStr\n    password: str\n\nclass LoginRequest(BaseModel):\n    username: str\n    password: str\n\ndef hash_password(password: str) -> str:\n    return pwd_context.hash(password)\n\ndef verify_password(plain_password: str, hashed_password: str) -> bool:\n    return pwd_context.verify(plain_password, hashed_password)\n\n@router.post(\"/register\")\nasync def register(request: RegisterRequest, db: Session = Depends(get_db)):\n    # 检查用户名是否已存在\n    if db.query(User).filter(User.username == request.username).first():\n        raise HTTPException(status_code=400, detail=\"用户名已存在\")\n    \n    # 检查邮箱是否已存在\n    if db.query(User).filter(User.email == request.email).first():\n        raise HTTPException(status_code=400, detail=\"邮箱已存在\")\n    \n    # 创建新用户\n    user = User(\n        username=request.username,\n        email=request.email,\n        hashed_password=hash_password(request.password)\n    )\n    db.add(user)\n    db.commit()\n    \n    # 发送确认邮件\n    # send_confirmation_email(user.email)\n    \n    return {\"message\": \"注册成功，请查收确认邮件\"}\n\n@router.post(\"/login\")\nasync def login(request: LoginRequest, db: Session = Depends(get_db)):\n    user = db.query(User).filter(User.username == request.username).first()\n    \n    if not user or not verify_password(request.password, user.hashed_password):\n        raise HTTPException(status_code=401, detail=\"用户名或密码错误\")\n    \n    # 生成 JWT token\n    token = secrets.token_urlsafe(32)\n    # 存储 token 到 Redis 或数据库\n    \n    return {\"access_token\": token, \"token_type\": \"bearer\"}\n"
+        },
+        "frontend": {
+          "language": "vue",
+          "framework": "Vue 2",
+          "code": "<template>\n  <div class=\"login-page\">\n    <div class=\"login-container\">\n      <h2>用户登录</h2>\n      <form @submit.prevent=\"handleLogin\">\n        <div class=\"form-group\">\n          <label>用户名</label>\n          <input \n            v-model=\"form.username\" \n            type=\"text\" \n            placeholder=\"请输入用户名\"\n            required\n          />\n        </div>\n        \n        <div class=\"form-group\">\n          <label>密码</label>\n          <input \n            v-model=\"form.password\" \n            type=\"password\" \n            placeholder=\"请输入密码\"\n            required\n          />\n        </div>\n        \n        <div v-if=\"errorMessage\" class=\"error-message\">\n          {{ errorMessage }}\n        </div>\n        \n        <button type=\"submit\" :disabled=\"loading\" class=\"login-btn\">\n          {{ loading ? '登录中...' : '登录' }}\n        </button>\n      </form>\n      \n      <div class=\"links\">\n        <router-link to=\"/register\">注册账号</router-link>\n        <router-link to=\"/forgot-password\">忘记密码</router-link>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      form: {\n        username: '',\n        password: ''\n      },\n      loading: false,\n      errorMessage: ''\n    }\n  },\n  methods: {\n    async handleLogin() {\n      this.loading = true\n      this.errorMessage = ''\n      \n      try {\n        const response = await this.$http.post('/api/v1/auth/login', this.form)\n        \n        if (response.data.success) {\n          // 保存 token\n          localStorage.setItem('token', response.data.data.access_token)\n          \n          // 跳转到首页\n          this.$router.push('/')\n        }\n      } catch (error) {\n        this.errorMessage = error.response?.data?.message || '登录失败，请重试'\n      } finally {\n        this.loading = false\n      }\n    }\n  }\n}\n</script>\n\n<style scoped>\n.login-page {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n}\n\n.login-container {\n  background: white;\n  padding: 40px;\n  border-radius: 8px;\n  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);\n  width: 100%;\n  max-width: 400px;\n}\n\n.form-group {\n  margin-bottom: 20px;\n}\n\nlabel {\n  display: block;\n  margin-bottom: 8px;\n  font-weight: 500;\n}\n\ninput {\n  width: 100%;\n  padding: 10px;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  font-size: 14px;\n}\n\n.error-message {\n  color: #f56565;\n  font-size: 14px;\n  margin-bottom: 15px;\n}\n\n.login-btn {\n  width: 100%;\n  padding: 10px;\n  background: #667eea;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  font-size: 16px;\n  cursor: pointer;\n}\n\n.links {\n  margin-top: 20px;\n  text-align: center;\n}\n\n.links a {\n  color: #667eea;\n  text-decoration: none;\n  margin: 0 10px;\n}\n</style>\n"
+        }
+      },
+      "quality_score": 0.92,
+      "generation_time_ms": 3200.45,
+      "timestamp": "2024-01-15T10:30:00Z"
+    },
+    {
+      "result_id": 2,
+      "requirement": "实现一个商品搜索和筛选功能",
+      "generated_user_stories": [
+        {
+          "story": "作为购物用户，我想通过关键词快速搜索商品，以便找到想要的商品",
+          "acceptance_criteria": ["支持按商品名称、品牌、关键词搜索", "搜索结果按相关性排序"]
+        },
+        {
+          "story": "作为用户，我想按价格、评分、销量等条件筛选商品，以便快速缩小范围",
+          "acceptance_criteria": ["支持多条件组合筛选", "筛选结果实时更新"]
+        }
+      ],
+      "quality_score": 0.88,
+      "timestamp": "2024-01-14T15:45:00Z"
+    }
+  ],
+  "metadata": {
+    "total_samples": 2,
+    "average_quality_score": 0.90,
+    "date_range": {
+      "start": "2024-01-14T00:00:00Z",
+      "end": "2024-01-15T23:59:59Z"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "examples": [
+    {
+      "id": 1,
+      "title": "电商平台-订单管理模块",
+      "requirement": "我们需要开发一个订单管理系统，支持用户提交订单、查看订单状态、取消订单，管理员可以审核和发货，系统需要记录订单历史，支持多种支付方式，需要与物流系统对接",
+      "generated_stories": [
+        {
+          "id": 1,
+          "story": "作为在线购物用户，我想提交订单并选择支付方式，以便快速购买商品",
+          "acceptance_criteria": [
+            "能够选择多种支付方式（支付宝、微信、银行卡）",
+            "订单提交后收到确认邮件",
+            "支付超时自动取消订单"
+          ]
+        },
+        {
+          "id": 2,
+          "story": "作为购物用户，我想实时查看订单状态和物流信息，以便了解商品何时送达",
+          "acceptance_criteria": [
+            "显示订单各环节状态（已提交、已支付、已发货、已送达）",
+            "物流信息实时更新",
+            "支持查看订单详情和发票"
+          ]
+        },
+        {
+          "id": 3,
+          "story": "作为购物用户，我想在订单发货前取消订单并退款，以便改变购买决定",
+          "acceptance_criteria": [
+            "未发货订单可以取消",
+            "取消后自动退款到原支付账户",
+            "生成退款单据供查询"
+          ]
+        },
+        {
+          "id": 4,
+          "story": "作为客服人员，我想查看用户订单历史，以便处理售后问题",
+          "acceptance_criteria": [
+            "可按订单号、用户名、日期搜索",
+            "显示订单详情和备注",
+            "支持添加售后处理记录"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "task": "设计订单表和支付表的数据模型，包含必要字段和索引",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 1
+        },
+        {
+          "id": 2,
+          "task": "实现订单创建、查询、更新接口，支持事务处理",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 3
+        },
+        {
+          "id": 3,
+          "task": "集成第三方支付 API（支付宝、微信、银行），处理支付回调",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 4
+        },
+        {
+          "id": 4,
+          "task": "实现订单状态管理和物流信息同步",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 2
+        },
+        {
+          "id": 5,
+          "task": "设计订单管理后台页面和搜索功能",
+          "category": "frontend",
+          "priority": "high",
+          "estimated_days": 2
+        },
+        {
+          "id": 6,
+          "task": "实现用户订单列表、详情、取消等交互功能",
+          "category": "frontend",
+          "priority": "high",
+          "estimated_days": 3
+        }
+      ],
+      "created_at": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "title": "社交应用-评论系统",
+      "requirement": "需要开发一个评论系统，用户可以对内容发表评论，支持@其他用户、上传图片、表情符号，评论需要分层显示（回复），用户可以编辑和删除自己的评论，需要实现评论审核和举报功能",
+      "generated_stories": [
+        {
+          "id": 1,
+          "story": "作为社交用户，我想对朋友的内容发表评论和回复，以便参与讨论",
+          "acceptance_criteria": [
+            "支持发表一级评论和二级回复",
+            "支持 @其他用户",
+            "实时显示新评论提醒"
+          ]
+        },
+        {
+          "id": 2,
+          "story": "作为用户，我想在评论中使用表情和图片，以便更好地表达",
+          "acceptance_criteria": [
+            "支持选择常用表情",
+            "支持上传最多 3 张图片",
+            "图片自动压缩和缩略图显示"
+          ]
+        },
+        {
+          "id": 3,
+          "story": "作为用户，我想编辑或删除自己的评论，以便修正或撤销",
+          "acceptance_criteria": [
+            "发表 30 分钟内可编辑",
+            "删除后显示「已删除」但不影响回复显示",
+            "保留编辑历史记录"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "task": "设计评论数据表（支持层级结构）",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 1
+        },
+        {
+          "id": 2,
+          "task": "实现评论 CRUD 接口和权限检查",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 2
+        },
+        {
+          "id": 3,
+          "task": "实现评论审核和内容过滤机制",
+          "category": "backend",
+          "priority": "medium",
+          "estimated_days": 2
+        },
+        {
+          "id": 4,
+          "task": "设计评论输入框和评论列表组件",
+          "category": "frontend",
+          "priority": "high",
+          "estimated_days": 2
+        },
+        {
+          "id": 5,
+          "task": "实现表情和图片上传功能",
+          "category": "frontend",
+          "priority": "medium",
+          "estimated_days": 2
+        }
+      ],
+      "created_at": "2024-01-14T14:20:00Z"
+    },
+    {
+      "id": 3,
+      "title": "内容平台-推荐系统",
+      "requirement": "平台需要一个个性化推荐系统，根据用户行为（浏览、点赞、分享）推荐相关内容，支持按分类筛选，需要实时更新推荐结果，并能处理冷启动问题",
+      "generated_stories": [
+        {
+          "id": 1,
+          "story": "作为内容消费者，我想看到根据我兴趣推荐的内容，以便快速找到感兴趣的内容",
+          "acceptance_criteria": [
+            "首页显示个性化推荐",
+            "推荐精准度不低于 70%",
+            "支持刷新获取新推荐"
+          ]
+        },
+        {
+          "id": 2,
+          "story": "作为新用户，我想根据我的初始偏好设置获得合适的推荐，以便快速上手平台",
+          "acceptance_criteria": [
+            "注册后引导用户选择兴趣分类",
+            "基于分类的初始推荐",
+            "可随时调整兴趣偏好"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "id": 1,
+          "task": "实现用户行为数据收集（浏览、点赞、分享等）",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 2
+        },
+        {
+          "id": 2,
+          "task": "构建推荐算法（基于协同过滤或内容相似性）",
+          "category": "backend",
+          "priority": "high",
+          "estimated_days": 5
+        },
+        {
+          "id": 3,
+          "task": "实现推荐结果缓存和实时更新机制",
+          "category": "backend",
+          "priority": "medium",
+          "estimated_days": 3
+        }
+      ],
+      "created_at": "2024-01-13T09:15:00Z"
+    }
+  ],
+  "metadata": {
+    "total_examples": 3,
+    "categories": ["电商", "社交", "内容平台"],
+    "last_updated": "2024-01-15T10:30:00Z",
+    "version": "1.0"
+  }
+}

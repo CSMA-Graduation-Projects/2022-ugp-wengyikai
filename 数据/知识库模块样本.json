@@ -1,0 +1,172 @@
+[
+  {
+    "module_id": 1,
+    "module_name": "用户登录",
+    "category": "用户认证",
+    "aliases": ["认证", "用户登录", "账号登录", "登录系统"],
+    "required_elements": ["账号密码输入", "多因素认证(MFA)", "密码加密存储", "错误重试限制"],
+    "preconditions": ["用户已注册", "账号处于可用状态"],
+    "exception_scenarios": ["密码错误", "验证码失效", "账号被冻结", "连续输入失败超过限制"],
+    "typical_tasks": [
+      "设计登录页面",
+      "实现登录接口",
+      "设计用户表字段",
+      "实现失败提示与重试限制"
+    ],
+    "security_constraints": "需符合等保三级身份鉴别要求",
+    "description": "用户通过用户名密码进行系统登录"
+  },
+  {
+    "module_id": 2,
+    "module_name": "用户注册",
+    "category": "用户管理",
+    "aliases": ["新用户注册", "账号注册", "用户注册"],
+    "required_elements": ["注册信息校验", "密码加密存储", "重复账号校验", "验证码验证"],
+    "preconditions": ["用户未注册"],
+    "exception_scenarios": ["手机号已存在", "验证码错误", "信息格式非法", "密码强度不足"],
+    "typical_tasks": [
+      "设计注册页面",
+      "实现注册接口",
+      "设计用户表",
+      "实现验证码校验逻辑"
+    ],
+    "security_constraints": "敏感信息需加密传输与存储",
+    "description": "新用户注册账号流程"
+  },
+  {
+    "module_id": 3,
+    "module_name": "用户管理",
+    "category": "用户管理",
+    "aliases": ["用户信息管理", "账号管理", "用户维护"],
+    "required_elements": ["用户信息查询", "用户信息修改", "用户状态管理", "权限校验"],
+    "preconditions": ["管理员已登录", "目标用户存在"],
+    "exception_scenarios": ["用户不存在", "无权限操作", "数据更新失败"],
+    "typical_tasks": [
+      "设计用户管理页面",
+      "实现用户查询接口",
+      "实现用户状态修改接口",
+      "设计用户信息表字段"
+    ],
+    "security_constraints": "涉及个人信息的字段需遵循最小可见原则",
+    "description": "管理员管理系统用户的流程"
+  },
+  {
+    "module_id": 4,
+    "module_name": "权限管理",
+    "category": "系统管理",
+    "aliases": ["角色权限", "访问控制", "权限控制", "RBAC"],
+    "required_elements": ["角色定义", "权限分配", "菜单权限控制", "接口访问校验"],
+    "preconditions": ["系统存在角色体系", "管理员具备配置权限"],
+    "exception_scenarios": ["越权访问", "角色未分配权限", "权限配置冲突"],
+    "typical_tasks": [
+      "设计角色权限页面",
+      "实现权限校验中间层",
+      "设计角色表和权限表",
+      "实现菜单权限控制"
+    ],
+    "security_constraints": "所有敏感接口必须进行身份认证和权限校验",
+    "description": "基于角色的访问控制系统"
+  },
+  {
+    "module_id": 5,
+    "module_name": "商品管理",
+    "category": "商品管理",
+    "aliases": ["商品维护", "商品信息管理", "商品录入"],
+    "required_elements": ["商品新增", "商品修改", "商品删除", "商品状态管理"],
+    "preconditions": ["管理员已登录", "商品分类已存在"],
+    "exception_scenarios": ["商品不存在", "商品编号重复", "分类不存在"],
+    "typical_tasks": [
+      "设计商品管理页面",
+      "实现商品增删改查接口",
+      "设计商品表",
+      "实现商品状态切换逻辑"
+    ],
+    "security_constraints": "商品数据修改需记录操作日志",
+    "description": "后台管理商品信息的流程"
+  },
+  {
+    "module_id": 6,
+    "module_name": "购物车",
+    "category": "购物流程",
+    "aliases": ["加入购物车", "购物车管理", "车篮"],
+    "required_elements": ["加入商品", "修改数量", "删除商品", "购物车列表展示"],
+    "preconditions": ["用户已登录", "商品已上架"],
+    "exception_scenarios": ["库存不足", "商品已下架", "购物车数据失效"],
+    "typical_tasks": [
+      "设计购物车页面",
+      "实现购物车接口",
+      "设计购物车表",
+      "实现数量更新逻辑"
+    ],
+    "security_constraints": "用户购物车数据必须与账号绑定，禁止越权访问",
+    "description": "用户选择商品加入购物车的流程"
+  },
+  {
+    "module_id": 7,
+    "module_name": "订单管理",
+    "category": "订单流程",
+    "aliases": ["订单处理", "订单维护", "订单跟踪"],
+    "required_elements": ["订单创建", "订单查询", "订单状态管理", "订单历史记录"],
+    "preconditions": ["用户已登录", "购物车不为空"],
+    "exception_scenarios": ["库存不足", "支付失败", "订单重复"],
+    "typical_tasks": [
+      "设计订单表结构",
+      "实现订单创建接口",
+      "实现订单查询和筛选",
+      "实现订单状态流转"
+    ],
+    "security_constraints": "订单数据需要完整的审计日志",
+    "description": "用户下单和订单管理的流程"
+  },
+  {
+    "module_id": 8,
+    "module_name": "支付处理",
+    "category": "支付流程",
+    "aliases": ["支付", "在线支付", "支付方式", "收款"],
+    "required_elements": ["支付方式选择", "支付接口集成", "支付状态跟踪", "退款处理"],
+    "preconditions": ["订单已创建", "用户已确认"],
+    "exception_scenarios": ["支付失败", "支付超时", "重复支付"],
+    "typical_tasks": [
+      "集成第三方支付 API",
+      "实现支付接口",
+      "处理支付回调",
+      "实现退款流程"
+    ],
+    "security_constraints": "必须符合 PCI-DSS 标准，敏感支付信息必须加密",
+    "description": "处理用户支付的流程"
+  },
+  {
+    "module_id": 9,
+    "module_name": "评论评分",
+    "category": "用户交互",
+    "aliases": ["用户评价", "商品评分", "评论系统"],
+    "required_elements": ["评论内容", "星级评分", "发表时间", "审核状态"],
+    "preconditions": ["用户已购买商品", "用户已登录"],
+    "exception_scenarios": ["重复评论", "评论被举报", "用户被禁言"],
+    "typical_tasks": [
+      "设计评论表结构",
+      "实现评论发表接口",
+      "实现评论展示和筛选",
+      "实现评论审核机制"
+    ],
+    "security_constraints": "评论内容需要审核，禁止发布违规内容",
+    "description": "用户对商品进行评价和评分的流程"
+  },
+  {
+    "module_id": 10,
+    "module_name": "搜索功能",
+    "category": "内容发现",
+    "aliases": ["全文搜索", "商品搜索", "内容搜索"],
+    "required_elements": ["搜索输入", "搜索结果", "搜索筛选", "搜索建议"],
+    "preconditions": ["数据库已存在数据"],
+    "exception_scenarios": ["搜索无结果", "搜索超时", "特殊字符处理"],
+    "typical_tasks": [
+      "实现搜索接口",
+      "建立搜索索引",
+      "实现搜索结果排序",
+      "实现搜索建议（自动补全）"
+    ],
+    "security_constraints": "需要防止 SQL 注入和搜索词盗取用户隐私",
+    "description": "用户搜索商品或内容的流程"
+  }
+]
