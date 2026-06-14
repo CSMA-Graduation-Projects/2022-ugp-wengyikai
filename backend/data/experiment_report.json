@@ -1,0 +1,2431 @@
+{
+  "knowledge_statistics": {
+    "knowledge_module_total": 38,
+    "builtin_module_count": 38,
+    "custom_module_count": 0,
+    "category_total": 17,
+    "modules_by_category": {
+      "内容互动": 2,
+      "电商交易": 8,
+      "数据分析": 2,
+      "流程协同": 2,
+      "后台管理": 6,
+      "安全认证": 4,
+      "安全审计": 1,
+      "系统运维": 2,
+      "系统集成": 1,
+      "教育系统": 2,
+      "预约系统": 1,
+      "用户中心": 1,
+      "通用功能": 2,
+      "消息中心": 1,
+      "数据处理": 1,
+      "医疗系统": 1,
+      "政务系统": 1
+    },
+    "total_aliases": 204,
+    "total_required_elements": 186,
+    "total_preconditions": 73,
+    "total_exception_scenarios": 152,
+    "total_typical_tasks": 156,
+    "rule_type_total": 5,
+    "rule_types": [
+      "必选要素",
+      "前置条件",
+      "异常场景",
+      "典型任务",
+      "安全约束"
+    ]
+  },
+  "sample_summary": {
+    "sample_total": 12,
+    "sources": {
+      "公开业务场景改写": 5,
+      "课程设计需求": 4,
+      "作者构造综合样本": 3
+    },
+    "domains": {
+      "安全认证": 1,
+      "用户中心": 1,
+      "电商交易": 1,
+      "后台管理": 1,
+      "流程协同": 1,
+      "数据分析": 1,
+      "数据处理": 1,
+      "教育系统": 1,
+      "预约系统": 1,
+      "医疗系统": 1,
+      "政务系统": 1,
+      "售后服务": 1
+    }
+  },
+  "quality_summary": [
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "sample_count": 12,
+      "success_rate": 1.0,
+      "avg_total_score": 100,
+      "avg_structured_score": 35,
+      "avg_story_score": 25,
+      "avg_task_score": 20,
+      "avg_dependency_score": 20,
+      "avg_story_count": 4,
+      "avg_task_count": 10.75,
+      "avg_dependency_task_ratio": 0.64,
+      "avg_failure_keyword_count": 1,
+      "avg_security_keyword_count": 0.92,
+      "avg_total_ms": 5132.39,
+      "max_total_ms": 7695.18,
+      "avg_model_ms": 5132.28,
+      "avg_local_ms": 0.11
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "sample_count": 12,
+      "success_rate": 1.0,
+      "avg_total_score": 100,
+      "avg_structured_score": 35,
+      "avg_story_score": 25,
+      "avg_task_score": 20,
+      "avg_dependency_score": 20,
+      "avg_story_count": 4.17,
+      "avg_task_count": 12.75,
+      "avg_dependency_task_ratio": 0.72,
+      "avg_failure_keyword_count": 1.5,
+      "avg_security_keyword_count": 1.58,
+      "avg_total_ms": 6141.17,
+      "max_total_ms": 8718.56,
+      "avg_model_ms": 6141.08,
+      "avg_local_ms": 0.1
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "sample_count": 12,
+      "success_rate": 1.0,
+      "avg_total_score": 98.75,
+      "avg_structured_score": 35,
+      "avg_story_score": 23.75,
+      "avg_task_score": 20,
+      "avg_dependency_score": 20,
+      "avg_story_count": 3.5,
+      "avg_task_count": 11.5,
+      "avg_dependency_task_ratio": 0.59,
+      "avg_failure_keyword_count": 1.58,
+      "avg_security_keyword_count": 1.42,
+      "avg_total_ms": 5269.39,
+      "max_total_ms": 8652.42,
+      "avg_model_ms": 5269.29,
+      "avg_local_ms": 0.1
+    }
+  ],
+  "quality_records": [
+    {
+      "sample_id": "S01",
+      "domain": "安全认证",
+      "source_type": "公开业务场景改写",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "验证码",
+        "登录",
+        "注册",
+        "密码找回"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 8,
+      "dependency_task_ratio": 0.625,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 2,
+      "total_ms": 5116.99,
+      "model_ms": 5116.88,
+      "local_ms": 0.11,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1419,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 5116.88,
+        "story_count": 3,
+        "task_count": 8,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S01",
+      "domain": "安全认证",
+      "source_type": "公开业务场景改写",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "验证码",
+        "登录",
+        "注册",
+        "密码找回"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 11,
+      "dependency_task_ratio": 0.6364,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 2,
+      "total_ms": 6163.22,
+      "model_ms": 6163.11,
+      "local_ms": 0.11,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1574,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 6163.11,
+        "story_count": 4,
+        "task_count": 11,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S01",
+      "domain": "安全认证",
+      "source_type": "公开业务场景改写",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "验证码",
+        "登录",
+        "注册",
+        "密码找回"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 16,
+      "dependency_task_ratio": 0.625,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 2,
+      "total_ms": 6918.07,
+      "model_ms": 6917.99,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 2159,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 6917.99,
+        "story_count": 4,
+        "task_count": 16,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S02",
+      "domain": "用户中心",
+      "source_type": "公开业务场景改写",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "登录",
+        "个人信息"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 5,
+      "task_count": 11,
+      "dependency_task_ratio": 0.8182,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 1,
+      "total_ms": 4673.87,
+      "model_ms": 4673.78,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1396,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 4673.78,
+        "story_count": 5,
+        "task_count": 11,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S02",
+      "domain": "用户中心",
+      "source_type": "公开业务场景改写",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "登录",
+        "个人信息"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 5,
+      "task_count": 17,
+      "dependency_task_ratio": 0.8824,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 3,
+      "total_ms": 7331.97,
+      "model_ms": 7331.87,
+      "local_ms": 0.1,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1551,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 7331.87,
+        "story_count": 5,
+        "task_count": 17,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S02",
+      "domain": "用户中心",
+      "source_type": "公开业务场景改写",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "登录",
+        "个人信息"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 9,
+      "dependency_task_ratio": 0.5556,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 2,
+      "total_ms": 4103.71,
+      "model_ms": 4103.64,
+      "local_ms": 0.07,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 1763,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 4103.64,
+        "story_count": 3,
+        "task_count": 9,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S03",
+      "domain": "电商交易",
+      "source_type": "公开业务场景改写",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "库存管理",
+        "购物车",
+        "订单管理",
+        "支付"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 7,
+      "task_count": 19,
+      "dependency_task_ratio": 0.5789,
+      "failure_keyword_count": 4,
+      "security_keyword_count": 0,
+      "total_ms": 7695.18,
+      "model_ms": 7695.02,
+      "local_ms": 0.16,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1408,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 7695.02,
+        "story_count": 7,
+        "task_count": 19,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S03",
+      "domain": "电商交易",
+      "source_type": "公开业务场景改写",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "库存管理",
+        "购物车",
+        "订单管理",
+        "支付"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 7,
+      "task_count": 20,
+      "dependency_task_ratio": 0.7,
+      "failure_keyword_count": 5,
+      "security_keyword_count": 0,
+      "total_ms": 8718.56,
+      "model_ms": 8718.46,
+      "local_ms": 0.1,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1563,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 8718.46,
+        "story_count": 7,
+        "task_count": 20,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S03",
+      "domain": "电商交易",
+      "source_type": "公开业务场景改写",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "库存管理",
+        "购物车",
+        "订单管理",
+        "支付"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 7,
+      "task_count": 21,
+      "dependency_task_ratio": 0.5238,
+      "failure_keyword_count": 3,
+      "security_keyword_count": 1,
+      "total_ms": 8652.42,
+      "model_ms": 8652.32,
+      "local_ms": 0.1,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 2114,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 8652.32,
+        "story_count": 7,
+        "task_count": 21,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S04",
+      "domain": "后台管理",
+      "source_type": "公开业务场景改写",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "日志审计",
+        "登录",
+        "用户管理",
+        "权限管理"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 14,
+      "dependency_task_ratio": 0.5,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 3,
+      "total_ms": 5903.02,
+      "model_ms": 5902.94,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1404,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 5902.94,
+        "story_count": 4,
+        "task_count": 14,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S04",
+      "domain": "后台管理",
+      "source_type": "公开业务场景改写",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "日志审计",
+        "登录",
+        "用户管理",
+        "权限管理"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 5,
+      "task_count": 15,
+      "dependency_task_ratio": 0.6667,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 4,
+      "total_ms": 7291.17,
+      "model_ms": 7291.08,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1559,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 7291.08,
+        "story_count": 5,
+        "task_count": 15,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S04",
+      "domain": "后台管理",
+      "source_type": "公开业务场景改写",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "日志审计",
+        "登录",
+        "用户管理",
+        "权限管理"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 5,
+      "task_count": 14,
+      "dependency_task_ratio": 0.5,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 3,
+      "total_ms": 6275.62,
+      "model_ms": 6275.52,
+      "local_ms": 0.1,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 2130,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 6275.52,
+        "story_count": 5,
+        "task_count": 14,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S05",
+      "domain": "流程协同",
+      "source_type": "课程设计需求",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "审批流",
+        "工单管理",
+        "消息通知"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 9,
+      "dependency_task_ratio": 0.5556,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 0,
+      "total_ms": 4252.54,
+      "model_ms": 4252.46,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1404,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 4252.46,
+        "story_count": 3,
+        "task_count": 9,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S05",
+      "domain": "流程协同",
+      "source_type": "课程设计需求",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "审批流",
+        "工单管理",
+        "消息通知"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 12,
+      "dependency_task_ratio": 0.6667,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 1,
+      "total_ms": 5415.69,
+      "model_ms": 5415.61,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1559,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5415.61,
+        "story_count": 3,
+        "task_count": 12,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S05",
+      "domain": "流程协同",
+      "source_type": "课程设计需求",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "审批流",
+        "工单管理",
+        "消息通知"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 11,
+      "dependency_task_ratio": 0.5455,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 1,
+      "total_ms": 4894.28,
+      "model_ms": 4894.2,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 1894,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 4894.2,
+        "story_count": 3,
+        "task_count": 11,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S06",
+      "domain": "数据分析",
+      "source_type": "课程设计需求",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "报表统计",
+        "数据导出",
+        "搜索"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 9,
+      "dependency_task_ratio": 0.6667,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 2,
+      "total_ms": 4825.65,
+      "model_ms": 4825.57,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1410,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 4825.57,
+        "story_count": 4,
+        "task_count": 9,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S06",
+      "domain": "数据分析",
+      "source_type": "课程设计需求",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "报表统计",
+        "数据导出",
+        "搜索"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 12,
+      "dependency_task_ratio": 0.6667,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 2,
+      "total_ms": 5573.01,
+      "model_ms": 5572.91,
+      "local_ms": 0.1,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1565,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5572.91,
+        "story_count": 4,
+        "task_count": 12,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S06",
+      "domain": "数据分析",
+      "source_type": "课程设计需求",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "报表统计",
+        "数据导出",
+        "搜索"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 2,
+      "task_count": 9,
+      "dependency_task_ratio": 0.7778,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 2,
+      "total_ms": 4053.97,
+      "model_ms": 4053.88,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 95,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 20,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 1898,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 4053.88,
+        "story_count": 2,
+        "task_count": 9,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 95,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 20,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S07",
+      "domain": "数据处理",
+      "source_type": "课程设计需求",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "内容管理",
+        "数据字典",
+        "数据导入"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 9,
+      "dependency_task_ratio": 0.7778,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 1,
+      "total_ms": 4884.51,
+      "model_ms": 4884.23,
+      "local_ms": 0.28,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1401,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 4884.23,
+        "story_count": 3,
+        "task_count": 9,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S07",
+      "domain": "数据处理",
+      "source_type": "课程设计需求",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "内容管理",
+        "数据字典",
+        "数据导入"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 8,
+      "dependency_task_ratio": 0.75,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 2,
+      "total_ms": 5084.12,
+      "model_ms": 5084.03,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1556,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5084.03,
+        "story_count": 3,
+        "task_count": 8,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S07",
+      "domain": "数据处理",
+      "source_type": "课程设计需求",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "内容管理",
+        "数据字典",
+        "数据导入"
+      ],
+      "matched_count_reference": 3,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 11,
+      "dependency_task_ratio": 0.6364,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 0,
+      "total_ms": 5758.7,
+      "model_ms": 5758.62,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 1873,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5758.62,
+        "story_count": 3,
+        "task_count": 11,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S08",
+      "domain": "教育系统",
+      "source_type": "课程设计需求",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "评论评价",
+        "课程学习",
+        "考试测评",
+        "登录"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 12,
+      "dependency_task_ratio": 0.8333,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 0,
+      "total_ms": 5485.12,
+      "model_ms": 5485.04,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1408,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 5485.04,
+        "story_count": 4,
+        "task_count": 12,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S08",
+      "domain": "教育系统",
+      "source_type": "课程设计需求",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "评论评价",
+        "课程学习",
+        "考试测评",
+        "登录"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 12,
+      "dependency_task_ratio": 0.8333,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 1,
+      "total_ms": 6019.13,
+      "model_ms": 6019.05,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1563,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 6019.05,
+        "story_count": 4,
+        "task_count": 12,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S08",
+      "domain": "教育系统",
+      "source_type": "课程设计需求",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "评论评价",
+        "课程学习",
+        "考试测评",
+        "登录"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 13,
+      "dependency_task_ratio": 0.5385,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 0,
+      "total_ms": 5390.87,
+      "model_ms": 5390.78,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 2076,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5390.78,
+        "story_count": 4,
+        "task_count": 13,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S09",
+      "domain": "预约系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "预约排班"
+      ],
+      "matched_count_reference": 1,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 10,
+      "dependency_task_ratio": 0.8,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 0,
+      "total_ms": 5372.97,
+      "model_ms": 5372.9,
+      "local_ms": 0.07,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1403,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 5372.9,
+        "story_count": 4,
+        "task_count": 10,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S09",
+      "domain": "预约系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "预约排班"
+      ],
+      "matched_count_reference": 1,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 10,
+      "dependency_task_ratio": 0.8,
+      "failure_keyword_count": 3,
+      "security_keyword_count": 0,
+      "total_ms": 5100.19,
+      "model_ms": 5100.12,
+      "local_ms": 0.07,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1558,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5100.12,
+        "story_count": 3,
+        "task_count": 10,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S09",
+      "domain": "预约系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "预约排班"
+      ],
+      "matched_count_reference": 1,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 9,
+      "dependency_task_ratio": 0.6667,
+      "failure_keyword_count": 5,
+      "security_keyword_count": 0,
+      "total_ms": 4300.0,
+      "model_ms": 4299.88,
+      "local_ms": 0.12,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 1552,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 4299.88,
+        "story_count": 3,
+        "task_count": 9,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S10",
+      "domain": "医疗系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "登录",
+        "病历管理"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 12,
+      "dependency_task_ratio": 0.75,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 2,
+      "total_ms": 5288.69,
+      "model_ms": 5288.59,
+      "local_ms": 0.1,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1400,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 5288.59,
+        "story_count": 4,
+        "task_count": 12,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S10",
+      "domain": "医疗系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "登录",
+        "病历管理"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 12,
+      "dependency_task_ratio": 0.8333,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 2,
+      "total_ms": 5737.41,
+      "model_ms": 5737.33,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1555,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5737.33,
+        "story_count": 4,
+        "task_count": 12,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S10",
+      "domain": "医疗系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "登录",
+        "病历管理"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 10,
+      "dependency_task_ratio": 0.6,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 4,
+      "total_ms": 5102.08,
+      "model_ms": 5102.0,
+      "local_ms": 0.08,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 1752,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 5102.0,
+        "story_count": 4,
+        "task_count": 10,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S11",
+      "domain": "政务系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "审批流",
+        "政务申报"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 3,
+      "task_count": 8,
+      "dependency_task_ratio": 0.375,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 0,
+      "total_ms": 4231.8,
+      "model_ms": 4231.74,
+      "local_ms": 0.06,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1409,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 4231.74,
+        "story_count": 3,
+        "task_count": 8,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S11",
+      "domain": "政务系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "审批流",
+        "政务申报"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 15,
+      "dependency_task_ratio": 0.6,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 2,
+      "total_ms": 6448.06,
+      "model_ms": 6447.97,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1564,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 6447.97,
+        "story_count": 4,
+        "task_count": 15,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S11",
+      "domain": "政务系统",
+      "source_type": "作者构造综合样本",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "审批流",
+        "政务申报"
+      ],
+      "matched_count_reference": 2,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 2,
+      "task_count": 7,
+      "dependency_task_ratio": 0.5714,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 2,
+      "total_ms": 3490.43,
+      "model_ms": 3490.34,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 95,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 20,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 1737,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 3490.34,
+        "story_count": 2,
+        "task_count": 7,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 95,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 20,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S12",
+      "domain": "售后服务",
+      "source_type": "公开业务场景改写",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "物流配送",
+        "售后退款",
+        "订单管理",
+        "搜索"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 8,
+      "dependency_task_ratio": 0.375,
+      "failure_keyword_count": 2,
+      "security_keyword_count": 0,
+      "total_ms": 3858.3,
+      "model_ms": 3858.21,
+      "local_ms": 0.09,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1405,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 3858.21,
+        "story_count": 4,
+        "task_count": 8,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S12",
+      "domain": "售后服务",
+      "source_type": "公开业务场景改写",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "物流配送",
+        "售后退款",
+        "订单管理",
+        "搜索"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 4,
+      "task_count": 9,
+      "dependency_task_ratio": 0.5556,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 0,
+      "total_ms": 4811.53,
+      "model_ms": 4811.38,
+      "local_ms": 0.15,
+      "evaluation": {
+        "total_score": 100,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 25,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1560,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 4811.38,
+        "story_count": 4,
+        "task_count": 9,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 100,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 25,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    },
+    {
+      "sample_id": "S12",
+      "domain": "售后服务",
+      "source_type": "公开业务场景改写",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": true,
+      "error": "",
+      "matched_modules_reference": [
+        "物流配送",
+        "售后退款",
+        "订单管理",
+        "搜索"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 2,
+      "task_count": 8,
+      "dependency_task_ratio": 0.5,
+      "failure_keyword_count": 1,
+      "security_keyword_count": 0,
+      "total_ms": 4292.57,
+      "model_ms": 4292.3,
+      "local_ms": 0.27,
+      "evaluation": {
+        "total_score": 95,
+        "dimension_scores": {
+          "structured_completeness": 35,
+          "story_quality": 20,
+          "task_quality": 20,
+          "dependency_quality": 20
+        },
+        "summary": "结果较好，结构完整性和任务拆解质量较高。",
+        "suggestions": [
+          "当前生成结果整体较完整，可继续优化知识库覆盖范围。"
+        ]
+      },
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 2084,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 4292.3,
+        "story_count": 2,
+        "task_count": 8,
+        "error_type": "",
+        "result_status": "success"
+      },
+      "total_score": 95,
+      "dimension_scores": {
+        "structured_completeness": 35,
+        "story_quality": 20,
+        "task_quality": 20,
+        "dependency_quality": 20
+      }
+    }
+  ],
+  "significance_summary": [
+    {
+      "baseline": "plain_llm",
+      "baseline_label": "纯 LLM",
+      "challenger": "knowledge_enhanced",
+      "challenger_label": "LLM+知识库增强",
+      "avg_delta": -1.25,
+      "wins": 0,
+      "losses": 3,
+      "ties": 9,
+      "p_value": 0.25,
+      "significant": false
+    },
+    {
+      "baseline": "rule_template",
+      "baseline_label": "LLM+规则模板",
+      "challenger": "knowledge_enhanced",
+      "challenger_label": "LLM+知识库增强",
+      "avg_delta": -1.25,
+      "wins": 0,
+      "losses": 3,
+      "ties": 9,
+      "p_value": 0.25,
+      "significant": false
+    }
+  ],
+  "performance_summary": [
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 6368.12,
+      "max_total_ms": 6684.87,
+      "avg_model_ms": 6368.03,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6371.55,
+      "error_count": 0
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 6490.27,
+      "max_total_ms": 7367.08,
+      "avg_model_ms": 6490.19,
+      "avg_local_ms": 0.09,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6493.25,
+      "error_count": 0
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 6981.31,
+      "max_total_ms": 7328.47,
+      "avg_model_ms": 6981.22,
+      "avg_local_ms": 0.1,
+      "avg_evaluation_ms": 0.02,
+      "avg_batch_wallclock_ms": 6984.17,
+      "error_count": 0
+    },
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 6232.04,
+      "max_total_ms": 6719.44,
+      "avg_model_ms": 6231.95,
+      "avg_local_ms": 0.09,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6568.46,
+      "error_count": 0
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 6540.55,
+      "max_total_ms": 7747.63,
+      "avg_model_ms": 6540.44,
+      "avg_local_ms": 0.1,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 7186.28,
+      "error_count": 0
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 6475.31,
+      "max_total_ms": 8535.11,
+      "avg_model_ms": 6475.19,
+      "avg_local_ms": 0.11,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 7788.53,
+      "error_count": 0
+    },
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 5487.67,
+      "max_total_ms": 5601.72,
+      "avg_model_ms": 5487.59,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 5490.94,
+      "error_count": 0
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 5575.81,
+      "max_total_ms": 5754.15,
+      "avg_model_ms": 5575.72,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 5579.47,
+      "error_count": 0
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 6948.51,
+      "max_total_ms": 7353.71,
+      "avg_model_ms": 6948.41,
+      "avg_local_ms": 0.1,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6951.92,
+      "error_count": 0
+    },
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 5805.34,
+      "max_total_ms": 6430.5,
+      "avg_model_ms": 5805.24,
+      "avg_local_ms": 0.1,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6140.45,
+      "error_count": 0
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 6722.76,
+      "max_total_ms": 7777.59,
+      "avg_model_ms": 6722.65,
+      "avg_local_ms": 0.11,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 7368.17,
+      "error_count": 0
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 6058.16,
+      "max_total_ms": 6727.56,
+      "avg_model_ms": 6058.07,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6728.26,
+      "error_count": 0
+    },
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 5597.08,
+      "max_total_ms": 6078.31,
+      "avg_model_ms": 5596.99,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 5600.73,
+      "error_count": 0
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 5719.35,
+      "max_total_ms": 5776.71,
+      "avg_model_ms": 5719.27,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 5722.53,
+      "error_count": 0
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "concurrency": 1,
+      "request_count": 2,
+      "repeats": 2,
+      "avg_total_ms": 6207.07,
+      "max_total_ms": 6737.16,
+      "avg_model_ms": 6206.98,
+      "avg_local_ms": 0.1,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6210.8,
+      "error_count": 0
+    },
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 5660.14,
+      "max_total_ms": 6478.58,
+      "avg_model_ms": 5660.05,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6238.44,
+      "error_count": 0
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 5561.24,
+      "max_total_ms": 6156.36,
+      "avg_model_ms": 5561.14,
+      "avg_local_ms": 0.1,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6050.85,
+      "error_count": 0
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "concurrency": 2,
+      "request_count": 4,
+      "repeats": 2,
+      "avg_total_ms": 5717.92,
+      "max_total_ms": 7298.7,
+      "avg_model_ms": 5717.84,
+      "avg_local_ms": 0.08,
+      "avg_evaluation_ms": 0.01,
+      "avg_batch_wallclock_ms": 6664.84,
+      "error_count": 0
+    }
+  ],
+  "failure_case_catalog": [
+    {
+      "id": "F01",
+      "category": "空输入",
+      "interface": "/generate_and_evaluate",
+      "payload": "",
+      "expected_behavior": "直接返回“需求文本不能为空”，且不触发模型调用。"
+    },
+    {
+      "id": "F02",
+      "category": "知识库未命中",
+      "interface": "/preview_context",
+      "payload": "请为量子密钥分发网络设计一个跨星链遥测控制台。",
+      "expected_behavior": "trace.knowledge.context_source 应为 fallback_general_engineering，miss_reason 为 no_domain_match。"
+    },
+    {
+      "id": "F03",
+      "category": "歧义输入",
+      "interface": "/generate_and_evaluate",
+      "payload": "把这个流程尽快优化一下，越简单越好。",
+      "expected_behavior": "评估得分应低于结构化完整需求，或在 suggestions 中体现信息不足。"
+    },
+    {
+      "id": "F04",
+      "category": "冲突约束",
+      "interface": "/generate_and_evaluate",
+      "payload": "订单支付成功前必须先发货，且发货后才能创建订单。",
+      "expected_behavior": "应在人工评审记录中标记逻辑冲突识别情况，必要时作为失败案例讨论。"
+    },
+    {
+      "id": "F05",
+      "category": "空代码输入",
+      "interface": "/generate_story_from_code",
+      "payload": "",
+      "expected_behavior": "直接返回“代码文本不能为空”。"
+    },
+    {
+      "id": "F06",
+      "category": "代码生成缺失故事",
+      "interface": "/generate_code",
+      "payload": "",
+      "expected_behavior": "直接返回“用户故事不能为空”，且不调用模型。"
+    }
+  ],
+  "manual_review_template": "C:\\Users\\翁艺恺\\Desktop\\UserStoryLLM\\backend\\data\\manual_review_template.csv"
+}

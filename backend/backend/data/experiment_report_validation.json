@@ -1,0 +1,360 @@
+{
+  "knowledge_statistics": {
+    "knowledge_module_total": 38,
+    "builtin_module_count": 38,
+    "custom_module_count": 0,
+    "category_total": 17,
+    "modules_by_category": {
+      "内容互动": 2,
+      "电商交易": 8,
+      "数据分析": 2,
+      "流程协同": 2,
+      "后台管理": 6,
+      "安全认证": 4,
+      "安全审计": 1,
+      "系统运维": 2,
+      "系统集成": 1,
+      "教育系统": 2,
+      "预约系统": 1,
+      "用户中心": 1,
+      "通用功能": 2,
+      "消息中心": 1,
+      "数据处理": 1,
+      "医疗系统": 1,
+      "政务系统": 1
+    },
+    "total_aliases": 204,
+    "total_required_elements": 186,
+    "total_preconditions": 73,
+    "total_exception_scenarios": 152,
+    "total_typical_tasks": 156,
+    "rule_type_total": 5,
+    "rule_types": [
+      "必选要素",
+      "前置条件",
+      "异常场景",
+      "典型任务",
+      "安全约束"
+    ]
+  },
+  "sample_summary": {
+    "sample_total": 1,
+    "sources": {
+      "公开业务场景改写": 1
+    },
+    "domains": {
+      "安全认证": 1
+    }
+  },
+  "quality_summary": [
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "sample_count": 1,
+      "success_rate": 0.0,
+      "avg_total_score": 0,
+      "avg_structured_score": 0,
+      "avg_story_score": 0,
+      "avg_task_score": 0,
+      "avg_dependency_score": 0,
+      "avg_story_count": 0,
+      "avg_task_count": 0,
+      "avg_dependency_task_ratio": 0.0,
+      "avg_failure_keyword_count": 0,
+      "avg_security_keyword_count": 0,
+      "avg_total_ms": 703.8,
+      "max_total_ms": 703.8,
+      "avg_model_ms": 0.0,
+      "avg_local_ms": 703.8
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "sample_count": 1,
+      "success_rate": 0.0,
+      "avg_total_score": 0,
+      "avg_structured_score": 0,
+      "avg_story_score": 0,
+      "avg_task_score": 0,
+      "avg_dependency_score": 0,
+      "avg_story_count": 0,
+      "avg_task_count": 0,
+      "avg_dependency_task_ratio": 0.0,
+      "avg_failure_keyword_count": 0,
+      "avg_security_keyword_count": 0,
+      "avg_total_ms": 943.72,
+      "max_total_ms": 943.72,
+      "avg_model_ms": 0.0,
+      "avg_local_ms": 943.72
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "sample_count": 1,
+      "success_rate": 0.0,
+      "avg_total_score": 0,
+      "avg_structured_score": 0,
+      "avg_story_score": 0,
+      "avg_task_score": 0,
+      "avg_dependency_score": 0,
+      "avg_story_count": 0,
+      "avg_task_count": 0,
+      "avg_dependency_task_ratio": 0.0,
+      "avg_failure_keyword_count": 0,
+      "avg_security_keyword_count": 0,
+      "avg_total_ms": 804.1,
+      "max_total_ms": 804.1,
+      "avg_model_ms": 0.0,
+      "avg_local_ms": 804.1
+    }
+  ],
+  "quality_records": [
+    {
+      "sample_id": "S01",
+      "domain": "安全认证",
+      "source_type": "公开业务场景改写",
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "success": false,
+      "error": "推理失败: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}",
+      "matched_modules_reference": [
+        "验证码",
+        "登录",
+        "注册",
+        "密码找回"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 0,
+      "task_count": 0,
+      "dependency_task_ratio": 0.0,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 0,
+      "total_ms": 703.8,
+      "model_ms": 0.0,
+      "local_ms": 703.8,
+      "evaluation": null,
+      "trace": {
+        "strategy": "plain_llm",
+        "prompt_chars": 1419,
+        "used_context": false,
+        "llm_called": true,
+        "llm_inference_ms": 0.0,
+        "story_count": 0,
+        "task_count": 0,
+        "error_type": "inference_error",
+        "result_status": "error"
+      },
+      "total_score": 0,
+      "dimension_scores": {
+        "structured_completeness": 0,
+        "story_quality": 0,
+        "task_quality": 0,
+        "dependency_quality": 0
+      }
+    },
+    {
+      "sample_id": "S01",
+      "domain": "安全认证",
+      "source_type": "公开业务场景改写",
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "success": false,
+      "error": "推理失败: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}",
+      "matched_modules_reference": [
+        "验证码",
+        "登录",
+        "注册",
+        "密码找回"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 0,
+      "task_count": 0,
+      "dependency_task_ratio": 0.0,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 0,
+      "total_ms": 943.72,
+      "model_ms": 0.0,
+      "local_ms": 943.72,
+      "evaluation": null,
+      "trace": {
+        "strategy": "rule_template",
+        "prompt_chars": 1574,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 0.0,
+        "story_count": 0,
+        "task_count": 0,
+        "error_type": "inference_error",
+        "result_status": "error"
+      },
+      "total_score": 0,
+      "dimension_scores": {
+        "structured_completeness": 0,
+        "story_quality": 0,
+        "task_quality": 0,
+        "dependency_quality": 0
+      }
+    },
+    {
+      "sample_id": "S01",
+      "domain": "安全认证",
+      "source_type": "公开业务场景改写",
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "success": false,
+      "error": "推理失败: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}",
+      "matched_modules_reference": [
+        "验证码",
+        "登录",
+        "注册",
+        "密码找回"
+      ],
+      "matched_count_reference": 4,
+      "context_source_reference": "knowledge_base_hit",
+      "story_count": 0,
+      "task_count": 0,
+      "dependency_task_ratio": 0.0,
+      "failure_keyword_count": 0,
+      "security_keyword_count": 0,
+      "total_ms": 804.1,
+      "model_ms": 0.0,
+      "local_ms": 804.1,
+      "evaluation": null,
+      "trace": {
+        "strategy": "knowledge_enhanced",
+        "prompt_chars": 2159,
+        "used_context": true,
+        "llm_called": true,
+        "llm_inference_ms": 0.0,
+        "story_count": 0,
+        "task_count": 0,
+        "error_type": "inference_error",
+        "result_status": "error"
+      },
+      "total_score": 0,
+      "dimension_scores": {
+        "structured_completeness": 0,
+        "story_quality": 0,
+        "task_quality": 0,
+        "dependency_quality": 0
+      }
+    }
+  ],
+  "significance_summary": [
+    {
+      "baseline": "plain_llm",
+      "baseline_label": "纯 LLM",
+      "challenger": "knowledge_enhanced",
+      "challenger_label": "LLM+知识库增强",
+      "avg_delta": 0,
+      "wins": 0,
+      "losses": 0,
+      "ties": 1,
+      "p_value": 1.0,
+      "significant": false
+    },
+    {
+      "baseline": "rule_template",
+      "baseline_label": "LLM+规则模板",
+      "challenger": "knowledge_enhanced",
+      "challenger_label": "LLM+知识库增强",
+      "avg_delta": 0,
+      "wins": 0,
+      "losses": 0,
+      "ties": 1,
+      "p_value": 1.0,
+      "significant": false
+    }
+  ],
+  "performance_summary": [
+    {
+      "strategy": "plain_llm",
+      "strategy_label": "纯 LLM",
+      "concurrency": 1,
+      "request_count": 1,
+      "repeats": 1,
+      "avg_total_ms": 477.77,
+      "max_total_ms": 477.77,
+      "avg_model_ms": 0.0,
+      "avg_local_ms": 477.77,
+      "avg_evaluation_ms": 0.0,
+      "avg_batch_wallclock_ms": 481.15,
+      "error_count": 1
+    },
+    {
+      "strategy": "rule_template",
+      "strategy_label": "LLM+规则模板",
+      "concurrency": 1,
+      "request_count": 1,
+      "repeats": 1,
+      "avg_total_ms": 401.12,
+      "max_total_ms": 401.12,
+      "avg_model_ms": 0.0,
+      "avg_local_ms": 401.12,
+      "avg_evaluation_ms": 0.0,
+      "avg_batch_wallclock_ms": 404.74,
+      "error_count": 1
+    },
+    {
+      "strategy": "knowledge_enhanced",
+      "strategy_label": "LLM+知识库增强",
+      "concurrency": 1,
+      "request_count": 1,
+      "repeats": 1,
+      "avg_total_ms": 391.66,
+      "max_total_ms": 391.66,
+      "avg_model_ms": 0.0,
+      "avg_local_ms": 391.66,
+      "avg_evaluation_ms": 0.0,
+      "avg_batch_wallclock_ms": 395.34,
+      "error_count": 1
+    }
+  ],
+  "failure_case_catalog": [
+    {
+      "id": "F01",
+      "category": "空输入",
+      "interface": "/generate_and_evaluate",
+      "payload": "",
+      "expected_behavior": "直接返回“需求文本不能为空”，且不触发模型调用。"
+    },
+    {
+      "id": "F02",
+      "category": "知识库未命中",
+      "interface": "/preview_context",
+      "payload": "请为量子密钥分发网络设计一个跨星链遥测控制台。",
+      "expected_behavior": "trace.knowledge.context_source 应为 fallback_general_engineering，miss_reason 为 no_domain_match。"
+    },
+    {
+      "id": "F03",
+      "category": "歧义输入",
+      "interface": "/generate_and_evaluate",
+      "payload": "把这个流程尽快优化一下，越简单越好。",
+      "expected_behavior": "评估得分应低于结构化完整需求，或在 suggestions 中体现信息不足。"
+    },
+    {
+      "id": "F04",
+      "category": "冲突约束",
+      "interface": "/generate_and_evaluate",
+      "payload": "订单支付成功前必须先发货，且发货后才能创建订单。",
+      "expected_behavior": "应在人工评审记录中标记逻辑冲突识别情况，必要时作为失败案例讨论。"
+    },
+    {
+      "id": "F05",
+      "category": "空代码输入",
+      "interface": "/generate_story_from_code",
+      "payload": "",
+      "expected_behavior": "直接返回“代码文本不能为空”。"
+    },
+    {
+      "id": "F06",
+      "category": "代码生成缺失故事",
+      "interface": "/generate_code",
+      "payload": "",
+      "expected_behavior": "直接返回“用户故事不能为空”，且不调用模型。"
+    }
+  ],
+  "manual_review_template": "backend\\data\\manual_review_template_validation.csv"
+}

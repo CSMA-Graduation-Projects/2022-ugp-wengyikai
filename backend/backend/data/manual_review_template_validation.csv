@@ -1,0 +1,10 @@
+sample_id,strategy,strategy_label,reviewer_id,completeness_1_5,exception_coverage_1_5,dependency_rationality_1_5,code_usefulness_1_5,overall_1_5,comments
+S01,plain_llm,纯 LLM,R1,,,,,,
+S01,plain_llm,纯 LLM,R2,,,,,,
+S01,plain_llm,纯 LLM,R3,,,,,,
+S01,rule_template,LLM+规则模板,R1,,,,,,
+S01,rule_template,LLM+规则模板,R2,,,,,,
+S01,rule_template,LLM+规则模板,R3,,,,,,
+S01,knowledge_enhanced,LLM+知识库增强,R1,,,,,,
+S01,knowledge_enhanced,LLM+知识库增强,R2,,,,,,
+S01,knowledge_enhanced,LLM+知识库增强,R3,,,,,,

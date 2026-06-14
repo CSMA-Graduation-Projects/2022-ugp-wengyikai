@@ -1,0 +1,44 @@
+[
+  {
+    "id": "F01",
+    "category": "空输入",
+    "interface": "/generate_and_evaluate",
+    "payload": "",
+    "expected_behavior": "直接返回“需求文本不能为空”，且不触发模型调用。"
+  },
+  {
+    "id": "F02",
+    "category": "知识库未命中",
+    "interface": "/preview_context",
+    "payload": "请为量子密钥分发网络设计一个跨星链遥测控制台。",
+    "expected_behavior": "trace.knowledge.context_source 应为 fallback_general_engineering，miss_reason 为 no_domain_match。"
+  },
+  {
+    "id": "F03",
+    "category": "歧义输入",
+    "interface": "/generate_and_evaluate",
+    "payload": "把这个流程尽快优化一下，越简单越好。",
+    "expected_behavior": "评估得分应低于结构化完整需求，或在 suggestions 中体现信息不足。"
+  },
+  {
+    "id": "F04",
+    "category": "冲突约束",
+    "interface": "/generate_and_evaluate",
+    "payload": "订单支付成功前必须先发货，且发货后才能创建订单。",
+    "expected_behavior": "应在人工评审记录中标记逻辑冲突识别情况，必要时作为失败案例讨论。"
+  },
+  {
+    "id": "F05",
+    "category": "空代码输入",
+    "interface": "/generate_story_from_code",
+    "payload": "",
+    "expected_behavior": "直接返回“代码文本不能为空”。"
+  },
+  {
+    "id": "F06",
+    "category": "代码生成缺失故事",
+    "interface": "/generate_code",
+    "payload": "",
+    "expected_behavior": "直接返回“用户故事不能为空”，且不调用模型。"
+  }
+]
